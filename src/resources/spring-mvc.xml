@@ -10,12 +10,12 @@
 
 	<!-- 注册处理器 -->
 	<!-- 
-	<bean id="/some/register.do" class="com.abc.handlers.StudentHandler">
-		<property name="service" ref="studentService"/>
-	</bean>
+		<bean id="/some/register.do" class="com.abc.handlers.StudentHandler">
+			<property name="service" ref="studentService"/>
+		</bean>
 	 -->
 	
 	<!-- 注册组件扫描器 -->
-	<context:component-scan base-package="com.abc.handlers"/>
+	<context:component-scan base-package="com.abc.*"/>
 
 </beans>

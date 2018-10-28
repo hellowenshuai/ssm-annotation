@@ -14,18 +14,23 @@
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
+	
+	<!-- 注册事务注解驱动 -->
+	<tx:annotation-driven transaction-manager="transactionManager"/>
 
 	<!-- 注册事务通知 -->
-	<tx:advice id="txAdvice" transaction-manager="transactionManager">
-		<tx:attributes>
-			<tx:method name="save*" isolation="DEFAULT" propagation="REQUIRED"/>
-		</tx:attributes>
-	</tx:advice>
-	
+	<!--
+		<tx:advice id="txAdvice" transaction-manager="transactionManager">
+			<tx:attributes>
+				<tx:method name="save*" isolation="DEFAULT" propagation="REQUIRED"/>
+			</tx:attributes>
+		</tx:advice>
+	-->
 	<!-- AOP配置 -->
-	<aop:config>
-		<aop:pointcut expression="execution(* *..service.*.*(..))" id="myPointcut"/>
-		<aop:advisor advice-ref="txAdvice" pointcut-ref="myPointcut"/>
-	</aop:config>
-
+	<!--
+		<aop:config>
+			<aop:pointcut expression="execution(* *..service.*.*(..))" id="myPointcut"/>
+			<aop:advisor advice-ref="txAdvice" pointcut-ref="myPointcut"/>
+		</aop:config>
+	-->
 </beans>

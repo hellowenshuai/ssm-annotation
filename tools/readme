@@ -1,0 +1,2 @@
+将service层改为注解方式时，spring-Mvc.xml和spring-ervice.xml文件非常相似，
+这时可以只留一个，只能留mvc。因为mvc里面还可能需要配置其他 三大组件
